@@ -34,7 +34,7 @@ BABYLON.SceneLoader.ImportMesh(null, './assets/models/', '001.stl', scene, funct
     height: 5,
     width: 5,
     sourcePlane: (new BABYLON.Plane(0, 1, 0, -0.3)).normalize(),
-    sideOrientation: BABYLON.Mesh.FRONTSDE
+    sideOrientation: BABYLON.Mesh.BACKSIDE
   }, scene)
   plane.receiveShadows = true
   plane.material = groundMat
