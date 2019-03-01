@@ -7,6 +7,7 @@ colorMat.diffuseColor = new BABYLON.Color3(1, 1, 1)
 
 const groundMat = new BABYLON.StandardMaterial('color', scene)
 groundMat.diffuseColor = new BABYLON.Color3(0.8, 0.8, 0.8)
+groundMat.backFaceCulling = true
 
 scene.createDefaultCameraOrLight(true, true, true)
 
