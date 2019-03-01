@@ -7,7 +7,6 @@ colorMat.diffuseColor = new BABYLON.Color3(1, 1, 1)
 
 const groundMat = new BABYLON.StandardMaterial('color', scene)
 groundMat.diffuseColor = new BABYLON.Color3(0.8, 0.8, 0.8)
-groundMat.backFaceCulling = true
 
 scene.createDefaultCameraOrLight(true, true, true)
 
@@ -35,7 +34,7 @@ BABYLON.SceneLoader.ImportMesh(null, './assets/models/', '001.stl', scene, funct
     height: 5,
     width: 5,
     sourcePlane: (new BABYLON.Plane(0, 1, 0, -0.3)).normalize(),
-    sideOrientation: BABYLON.Mesh.DOUBLESIDE
+    sideOrientation: BABYLON.Mesh.FRONTSDE
   }, scene)
   plane.receiveShadows = true
   plane.material = groundMat
