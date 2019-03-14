@@ -5,6 +5,9 @@ const scene = new BABYLON.Scene(engine)
 const colorMat = new BABYLON.StandardMaterial('color', scene)
 colorMat.diffuseColor = new BABYLON.Color3(1, 1, 1)
 
+const groundMat = new BABYLON.StandardMaterial('color', scene)
+groundMat.diffuseColor = new BABYLON.Color3(0.8, 0.8, 0.8)
+
 scene.createDefaultCameraOrLight(true, true, true)
 
 const camera = new BABYLON.UniversalCamera('UniversalCamera', new BABYLON.Vector3.Zero(), scene)
@@ -23,6 +26,19 @@ BABYLON.SceneLoader.ImportMesh(null, './assets/models/', '001.stl', scene, funct
     mesh.rotation = new BABYLON.Vector3(-Math.PI / 2, 0, 0)
     mesh.scaling = new BABYLON.Vector3(3e-3, 3e-3, 3e-3)
   })
+  
+  const shadowGenerator = new BABYLON.ShadowGenerator(1024, light)
+  shadowGenerator.addShadowCaster(mesh[0])
+
+  const plane = BABYLON.MeshBuilder.CreatePlane('plane', {
+    height: 5,
+    width: 5,
+    sourcePlane: (new BABYLON.Plane(0, 1, 0, -0.3)).normalize(),
+    sideOrientation: BABYLON.Mesh.BACKSIDE
+  }, scene)
+  plane.receiveShadows = true
+  plane.material = groundMat
+
   engine.resize()
 })
 
