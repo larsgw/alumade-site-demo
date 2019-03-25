@@ -1,0 +1,30 @@
+<!doctype html5>
+<html>
+  <head>
+    <title>View Product - Alumade</title>
+    <meta name="description" content="Explore the 3D-model of a certain project">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <base href=".." >
+
+    <link rel="icon" href="./assets/img/logo-black-small.png" />
+
+    <script defer src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script defer src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  </head>
+  <body>
+    <canvas id="model-001" style="width: 100%; height: 100%"></canvas>
+
+    <script>
+      const models = {
+        'helios': '001.stl',
+        'thalasa': '002.stl'
+      }
+
+      window.model = models[location.hash.slice(2)]
+    </script>
+    <script defer src="./assets/js/scene.js"></script>
+  </body>
+</html>

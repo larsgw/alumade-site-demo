@@ -25,6 +25,11 @@ nav {
   padding: 0 1em;
 }
 
+nav h1 img {
+  vertical-align: top;
+  height: 1em;
+}
+
 nav ul li {
   list-style-type: none;
   display: inline;
@@ -53,7 +58,7 @@ header :first-child {
 main {
   margin: 0 auto;
   max-width: 1400px;
-  padding: 2em;
+  padding: 0 2em;
 }
 
 main section {
@@ -62,7 +67,7 @@ main section {
   position: relative;
   min-height: 25vh;
   border-bottom: 1px solid #666;
-  padding-bottom: 10%;
+  padding: 5% 0;
 }
 
 main section > * {
@@ -82,8 +87,15 @@ main section figure > * {
   width: 100%;
 }
 
-main section h2, main section h3 {
+main section h2,
+main section h3 {
   text-align: center;
+}
+
+main section img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
 }
 
 main section p {
